@@ -15,9 +15,9 @@ const showProducts = (products) => {
       <div>
     <img class="product-image" src=${product?.image}></img>
       </div>
-      <h3>${product.title}</h3>
+      <h3 class="fs-5 mt-5">${product.title}</h3>
       <p>Category: ${product.category}</p>
-      <h2>Price: $ ${product.price}</h2>
+      <h2 class="fs-2">Price: $ ${product.price}</h2>
       <p class="text-warning"> People Rated ${product?.rating?.count}, Avg. Rating ${product?.rating?.rate} </P>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-outline-success">add to cart</button>
       <button id="details-btn" class="btn btn-outline-info">Details</button></div>
