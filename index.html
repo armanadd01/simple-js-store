@@ -17,12 +17,16 @@
 </head>
 
 <body>
-  <header></header>
+  <header>
+    <div class="site-title mt-5 text-center">
+      <h1 class="fs-2">Welcome to my <span class="fs-1 fw-bold text-info">Famous</span> Online Store</h1>
+    </div>
+  </header>
   <main class="main">
     <div class="search-field">
-      <div class="search-box">
+      <div class="search-box d-flex justify-content-center">
         <input id="input-field" class="input-field" type="text" />
-        <button type="button" class="btn btn-outline-info search-button" data-toggle="button" aria-pressed="false"
+        <button type="button" class="btn btn-outline-info search-button m-1" data-toggle="button" aria-pressed="false"
           autocomplete="off" id="search-btn" onclick="loadProducts()">
           Search
         </button>
@@ -79,7 +83,7 @@
             </tbody>
           </table>
           <div class="parces text-center">
-            <button class="btn btn-primary text-center">Buy Now</button>
+            <button class="btn btn-outline-primary text-center">Buy Now</button>
           </div>
         </div>
       </div>
