@@ -15,9 +15,9 @@ const showProducts = (products) => {
     // Rating icon
     let icon;
     // Rating icon condition
-    if(product?.rating?.rate > 4){
+    if(product?.rating?.rate >= 4){
        icon = "smile";
-    }else if(product?.rating?.rate > 3){
+    }else if(product?.rating?.rate >= 3){
        icon = "meh";
     }else if(product?.rating?.rate < 3){
        icon = "frown";
