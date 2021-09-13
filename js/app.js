@@ -8,19 +8,31 @@ const loadProducts = () => {
 // show all product in UI 
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
+  
   for (const product of allProducts) {
-    const image = product.images;
+    // Product Image
+    const image = product.image;
+    // Rating icon
+    let icon;
+    // Rating icon condition
+    if(product?.rating?.rate > 4){
+       icon = "smile";
+    }else if(product?.rating?.rate > 3){
+       icon = "meh";
+    }else if(product?.rating?.rate < 3){
+       icon = "frown";
+    }
     const div = document.createElement("div");
     div.classList.add("product");
     // Product Cart design layout
     div.innerHTML = `<div class="single-product">
       <div>
-    <img class="product-image" src=${product?.image}></img>
+    <img class="product-image" src=${image}></img>
       </div>
       <h3 class="fs-5 mt-5">${product.title}</h3>
       <p>Category: ${product.category}</p>
       <h2 class="fs-2 text-danger">Price: $ ${product.price}</h2>
-      <p class="fw-bold"><span class="text-warning"><i class="far fa-smile text-info"></i> ${product?.rating?.rate}/5 </span> <span class="text-warning"> <i class="fas fa-users text-danger"></i> ${product?.rating?.count}</span></P>
+      <p class="fw-bold"><span class="text-warning"><i class="far fa-${icon} text-info"></i> ${product?.rating?.rate}/5 </span> <span class="text-warning"> <i class="fas fa-users text-danger"></i> ${product?.rating?.count}</span></P>
       <div class="product-button">
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-outline-success">add to cart</button>
       <button id="details-btn" class="btn btn-outline-info">Details</button></div>
